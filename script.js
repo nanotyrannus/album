@@ -35,9 +35,9 @@ var testArray = ["http://imgur.com/XXnxbqA", "http://imgur.com/UcaBqeL",
                  "http://imgur.com/FYdJC0Q", "http://imgur.com/qa5Jd0K"];
 
 $(function(){
-    $('#left').attr('src', testArray[0]);
-    $('#middle').attr('src', testArray[1]);
-    $('#right').attr('src', testArray[2]);
+    $('#left').attr('src', testArray[0] + 's.jpg');
+    $('#middle').attr('src', testArray[1] + 's.jpg');
+    $('#right').attr('src', testArray[2] + 's.jpg');
 });
 
 var index = 1;
@@ -69,7 +69,7 @@ $('body').keydown( function(e) {
         ++index;
     }
         setImage(left, testArray[index-1], true);
-        setImage(middle, testArray[index], false);
+        setImage(middle, testArray[index], true);
         setImage(right, testArray[index+1], true);
 });
 
