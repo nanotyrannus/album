@@ -1,0 +1,22 @@
+.io {
+    width: 50em;
+    height: 5em;
+    resize: none;
+    color: #FFF;
+    background-color: #000;
+}
+.view {
+    background-color: #777;
+    color: #FFF;
+    width: 100%;
+    height: 200 px;
+}
+
+.small {
+    width: 100px;
+    height: 100px;
+}
+
+.large {
+    width: 270px;
+}
