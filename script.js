@@ -1,6 +1,3 @@
-$(function() {
-   $('#mydiv').focus();
-});
 Array.prototype.contains = function(obj) {
     var i = this.length;
     while (i--) {
@@ -15,6 +12,7 @@ var record = [];
 
 if(localStorage.arraySet != undefined) {
     record = JSON.parse(localStorage.arraySet);
+    document.getElementById('set').value = record.join(',');
 }
 
 function push() {
@@ -28,6 +26,7 @@ function push() {
 
 function save() {
     localStorage.arraySet = JSON.stringify(record);
+    document.getElementById('set').value = record.join(',');
 }
 
 var testArray = ["http://imgur.com/XXnxbqA", "http://imgur.com/UcaBqeL",
@@ -57,6 +56,7 @@ which:
 var left = document.getElementById('left');
 var middle = document.getElementById('middle');
 var right = document.getElementById('right');
+var main = document.getElementById('main_image');
 
 $('body').keydown( function(e) {
     if(e.which == 37){
@@ -68,6 +68,7 @@ $('body').keydown( function(e) {
         //right
         ++index;
     }
+        setImage(main, testArray[index], false);
         setImage(left, testArray[index-1], true);
         setImage(middle, testArray[index], true);
         setImage(right, testArray[index+1], true);

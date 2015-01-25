@@ -7,15 +7,17 @@
     </head>
     <body>
         <div class="view" id="pictures">
-            <div style="margin-left: auto; margin-right: auto; width:30%">
-            <img class="small" id="left" src="x.png">
-            <img class="focus" id="middle" src="x.png">
-            <img class="small" id="right" src="x.png">            
+            <div id="main">
+                <img id="main_image">
+            </div>
+            <div style="display: block; margin:auto; width: 282px;">
+                <img class="small" id="left" src="x.png">
+                <img class="focus" id="middle" src="x.png">
+                <img class="small" id="right" src="x.png">  
             </div>
         </div>
-        <textarea class="io" id="user"></textarea>
+        <textarea class="io" id="user"></textarea><button style="button" onclick="push()">SAVE</button>
         <textarea class="io" id="set" disabled></textarea>
-        <button style="button" onclick="push()">SAVE</button>
         <p>&#x1F40C &#x1F41F &#x1F419 &#x1F420 &#x1F421</p>
     </body>
     <script src="script.js"></script>
