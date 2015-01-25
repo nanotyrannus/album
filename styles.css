@@ -36,6 +36,6 @@ body {
 }
 
 p {
-    font-family: "Segoe UI Symbol", Arial;
+    font-family: "Segoe UI Symbol","Segoe UI Emoji", Arial;
     font-size: 3em;
 }
