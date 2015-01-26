@@ -12,10 +12,10 @@ $(function(){
     var login = $('#login');
     var username = $('#username');
     if(location.hash === ''){
-        username.text = 'LOGIN';
+        username.text('LOGIN');
         login.attr('href', 'https://api.imgur.com/oauth2/authorize?client_id=12828f50fa4b69b&response_type=token');
     } else {
-        username.text = location.hash;
+        username.text(location.hash);
     }
 });
 var record = [];
