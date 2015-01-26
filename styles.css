@@ -21,7 +21,7 @@
 }
 
 #username {
-    width: 5em;
+    display: inline-block;
     text-align: center;
     border-radius: 5px;
     background-color: #85bf25;
