@@ -20,10 +20,10 @@ function getParam(param) {
 
 var albumObj = [];
 var imageObj = [];
-
+var xhr = new XMLHttpRequest();
+    xhr.addEventListener( "load", function(event) {albumObj.push(JSON.parse(xhr.responseText));}, false);
 //TO DO
 function getAlbum(id){
-    xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://api.imgur.com/3/album/' + id + '/images');
     xhr.setRequestHeader('Authorization', 'Bearer ' + getParam('access_token'));
     xhr.send();
