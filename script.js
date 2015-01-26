@@ -13,7 +13,7 @@ function getParam(param) {
     var list = hash.split('&');
     for(var i = 0; i < list.length; ++i){
         var pair = list[i].split('=');
-        if(pair[0]==='param') return pair[1];
+        if(pair[0]===param) return pair[1];
     }
     return false;
 }
