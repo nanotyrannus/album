@@ -26,6 +26,7 @@
     border-radius: 5px;
     background-color: #85bf25;
     color: #FFF;
+    padding: 5px;
 }
 
 .view {
@@ -59,6 +60,11 @@ body {
 }
 
 p {
-    font-family: "Segoe UI Symbol","Segoe UI Emoji", Arial;
-    font-size: 3em;
+    font-family:"Segoe UI Emoji", Arial;
+    font-size: 2em;
+}
+
+@font-face {
+    font-family: 'Symbola';
+    src: url('Symbola.ttf') format('ttf');
 }
