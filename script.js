@@ -8,6 +8,16 @@ Array.prototype.contains = function(obj) {
     return false;
 }
 
+function getParam(param) {
+    var hash = location.hash.substring(1);
+    var list = hash.split('&');
+    for(var i = 0; i < list.length; ++i){
+        var pair = list[i].split('=');
+        if(pair[0]==='param') return pair[1];
+    }
+    return false;
+}
+
 $(function(){
     var login = $('#login');
     var username = $('#username');
@@ -16,6 +26,7 @@ $(function(){
         login.attr('href', 'https://api.imgur.com/oauth2/authorize?client_id=12828f50fa4b69b&response_type=token');
     } else {
         username.text(location.hash);
+        username.text(getParam(location.hash));
     }
 });
 var record = [];
