@@ -18,6 +18,19 @@ function getParam(param) {
     return false;
 }
 
+var albumObj = [];
+var imageObj = [];
+
+//TO DO
+function getAlbum(id){
+    xhr = new XMLHttpRequest();
+    test.open('GET', 'https://api.imgur.com/3/album/' + id + '/images');
+    test.setRequestHeader('Authorization', 'Bearer ' + getParam('access_token'));
+    test.send();
+}
+
+getAlbum('1ooOe');
+
 $(function(){
     var login = $('#login');
     var username = $('#username');
@@ -29,6 +42,7 @@ $(function(){
         username.text('Logged in as: ' + getParam('account_username'));
     }
 });
+
 var record = [];
 
 if(localStorage.arraySet != undefined) {
