@@ -11,7 +11,7 @@ Array.prototype.contains = function(obj) {
 $(function(){
     var login = $('#login');
     var username = $('#username');
-    if(location.search === ''){
+    if(location.hash === ''){
         username.text = 'LOGIN';
         login.attr('href', 'https://api.imgur.com/oauth2/authorize?client_id=12828f50fa4b69b&response_type=token');
     } else {
