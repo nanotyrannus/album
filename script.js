@@ -8,6 +8,16 @@ Array.prototype.contains = function(obj) {
     return false;
 }
 
+$(function(){
+    var login = $('#login');
+    var username = $('#username');
+    if(location.search === ''){
+        username.text = 'LOGIN';
+        login.attr('href', 'https://api.imgur.com/oauth2/authorize?client_id=12828f50fa4b69b&response_type=token');
+    } else {
+        username.text = location.hash;
+    }
+});
 var record = [];
 
 if(localStorage.arraySet != undefined) {
