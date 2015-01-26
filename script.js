@@ -24,8 +24,8 @@ var imageObj = [];
 //TO DO
 function getAlbum(id){
     xhr = new XMLHttpRequest();
-    test.open('GET', 'https://api.imgur.com/3/album/' + id + '/images');
-    test.setRequestHeader('Authorization', 'Bearer ' + getParam('access_token'));
+    xhr.open('GET', 'https://api.imgur.com/3/album/' + id + '/images');
+    xhr.setRequestHeader('Authorization', 'Bearer ' + getParam('access_token'));
     test.send();
 }
 
