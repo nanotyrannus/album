@@ -1,4 +1,4 @@
-Array.prototype.contains = function(obj) {
+Array.prototype.contains = function (obj) {
     var i = this.length;
     while (i--) {
         if (this[i] == obj) {
@@ -18,10 +18,20 @@ function getParam(param) {
     return false;
 }
 
-var albumObj = [];
-var imageObj = [];
+function parseAlbum(album){
+    
+}
+
+var albumObjArr = [];
+var imageObjArr = [];
 var xhr = new XMLHttpRequest();
-    xhr.addEventListener( "load", function(event) {albumObj.push(JSON.parse(xhr.responseText));}, false);
+    xhr.addEventListener( "load", function(event) {
+        var albumObj = JSON.parse(xhr.responseText);
+        albumObjArr.push(parsedAlbum);
+        for (var i in albumObj.data){
+            imageObjArr.push(albumObj.data[i]);
+        }
+    }, false);
 //TO DO
 function getAlbum(id){
     xhr.open('GET', 'https://api.imgur.com/3/album/' + id + '/images');
