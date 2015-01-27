@@ -19,7 +19,7 @@ function getParam(param) {
 }
 
 function parseAlbum(album){
-    for (var i in album.data){
+    for (var i = 0; i < album.data.lenth; ++i){
         imageObjArr.push(album.data[i]);
     }
 }
