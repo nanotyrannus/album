@@ -29,7 +29,7 @@ var imageObjArr = [];
 var xhr = new XMLHttpRequest();
     xhr.addEventListener( "load", function(event) {
         var albumObj = JSON.parse(xhr.responseText);
-        albumObjArr.push(parsedAlbum);
+        albumObjArr.push(albumObj);
     }, false);
 //TO DO
 function getAlbum(id){
