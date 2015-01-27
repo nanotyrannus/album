@@ -30,6 +30,7 @@ var xhr = new XMLHttpRequest();
     xhr.addEventListener( "load", function(event) {
         var albumObj = JSON.parse(xhr.responseText);
         albumObjArr.push(albumObj);
+        parseAlbum(albumObj);
     }, false);
 //TO DO
 function getAlbum(id){
