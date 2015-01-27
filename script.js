@@ -19,7 +19,9 @@ function getParam(param) {
 }
 
 function parseAlbum(album){
-    
+    for (var i in album.data){
+        imageObjArr.push(album.data[i]);
+    }
 }
 
 var albumObjArr = [];
@@ -28,9 +30,6 @@ var xhr = new XMLHttpRequest();
     xhr.addEventListener( "load", function(event) {
         var albumObj = JSON.parse(xhr.responseText);
         albumObjArr.push(parsedAlbum);
-        for (var i in albumObj.data){
-            imageObjArr.push(albumObj.data[i]);
-        }
     }, false);
 //TO DO
 function getAlbum(id){
