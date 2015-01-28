@@ -28,7 +28,7 @@ function parseAlbum(album) {
     }
 }
 
-var userName = getParam('account_username');
+
 var albumIDs = [];
 var albumObjArr = [];
 var imageObjArr = [];
@@ -64,7 +64,7 @@ $(function(){
         login.attr('href', 'https://api.imgur.com/oauth2/authorize?client_id=12828f50fa4b69b&response_type=token');
     } else {
         username.text(location.hash);
-        username.text('Logged in as: ' + userName);
+        username.text('Logged in as: ' +  getParam('account_username'));
     }
 });
 
