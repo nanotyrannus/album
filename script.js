@@ -12,6 +12,19 @@ Array.prototype.peek = function () {
     return this[this.length-1];
 }
 
+$(function(){
+    alert('!');
+    var login = $('#login');
+    var username = $('#username');
+    if(!location.hash){
+        username.text('LOGIN');
+        login.attr('href', 'https://api.imgur.com/oauth2/authorize?client_id=12828f50fa4b69b&response_type=token');
+    } else {
+        username.text(location.hash);
+        username.text('Logged in as: ' +  getParam('account_username'));
+    }
+});
+
 function getParam(param) {
     var hash = location.hash.substring(1);
     var list = hash.split('&');
@@ -58,17 +71,7 @@ albumObjArr.push(JSON.parse(xhr.responseText));
 imageObjArr.push.apply(imageObjArr, albumObjArr.peek());
 
 
-$(function(){
-    var login = $('#login');
-    var username = $('#username');
-    if(location.hash === ''){
-        username.text('LOGIN');
-        login.attr('href', 'https://api.imgur.com/oauth2/authorize?client_id=12828f50fa4b69b&response_type=token');
-    } else {
-        username.text(location.hash);
-        username.text('Logged in as: ' +  getParam('account_username'));
-    }
-});
+
 
 var record = [];
 
