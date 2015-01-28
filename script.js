@@ -9,7 +9,7 @@ Array.prototype.contains = function (obj) {
 }
 
 Array.prototype.peek = function () {
-    return this[this.length-1]
+    return this[this.length-1];
 }
 
 function getParam(param) {
