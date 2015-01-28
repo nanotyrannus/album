@@ -8,6 +8,10 @@ Array.prototype.contains = function (obj) {
     return false;
 }
 
+Array.prototype.peek = function () {
+    return this[this.length-1]
+}
+
 function getParam(param) {
     var hash = location.hash.substring(1);
     var list = hash.split('&');
@@ -18,12 +22,14 @@ function getParam(param) {
     return false;
 }
 
-function parseAlbum(album){
-    for (var i = 0; i < album.data.length; ++i){
+function parseAlbum(album) {
+    for ( var i = 0; i < album.data.length; ++i) {
         imageObjArr.push(album.data[i]);
     }
 }
 
+var userName = getParam('account_username');
+var albumIDs = [];
 var albumObjArr = [];
 var imageObjArr = [];
 var xhr = new XMLHttpRequest();
@@ -32,14 +38,23 @@ var xhr = new XMLHttpRequest();
         albumObjArr.push(albumObj);
         parseAlbum(albumObj);
     }, false);
-//TO DO
+
 function getAlbum(id){
     xhr.open('GET', 'https://api.imgur.com/3/album/' + id + '/images');
-    xhr.setRequestHeader('Authorization', 'Bearer ' + getParam('access_token'));
+    setHeader(xhr);
     xhr.send();
 }
 
+function setHeader(xhrObj){ //sets request header
+    xhrObj.setRequestHeader('Authorization', 'Bearer ' + getParam('access_token'));
+}
+
+
+//driver
 getAlbum('1ooOe');
+albumObjArr.push(JSON.parse(xhr.responseText));
+imageObjArr.push.apply(imageObjArr, albumObjArr.peek());
+
 
 $(function(){
     var login = $('#login');
@@ -49,7 +64,7 @@ $(function(){
         login.attr('href', 'https://api.imgur.com/oauth2/authorize?client_id=12828f50fa4b69b&response_type=token');
     } else {
         username.text(location.hash);
-        username.text('Logged in as: ' + getParam('account_username'));
+        username.text('Logged in as: ' + userName);
     }
 });
 
@@ -77,6 +92,8 @@ function save() {
 var testArray = ["http://imgur.com/XXnxbqA", "http://imgur.com/UcaBqeL",
                  "http://imgur.com/dCmYQ79", "http://imgur.com/dQnCYxM", 
                  "http://imgur.com/FYdJC0Q", "http://imgur.com/qa5Jd0K"];
+
+
 
 $(function(){
     $('#left').attr('src', testArray[0] + 's.jpg');
