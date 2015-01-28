@@ -135,15 +135,15 @@ $('body').keydown( function(e) {
         //right
         ++index;
     }
-        setImage(main, 'https://img.imgur.com/' + imageObjArr[index].id + '.jpg', false);
-        setImage(left, 'https://img.imgur.com/' + imageObjArr[index - 1].id + 's.jpg', true);
-        setImage(middle, 'https://img.imgur.com/' + imageObjArr[index].id + 's.jpg', true);
-        setImage(right, 'https://img.imgur.com/' + imageObjArr[index + 1].id + 's.jpg', true);
+        setImage(main, imageObjArr[index].id, false);
+        setImage(left, imageObjArr[index - 1].id, true);
+        setImage(middle, imageObjArr[index].id, true);
+        setImage(right, imageObjArr[index + 1].id, true);
 });
 
 function setImage(img, src, thumb){
-    if(!src.contains('undefined')){
-        img.src = thumb ? (src + "s.jpg") : (src + ".jpg");
+    if(!src){
+        img.src = thumb ? ('http://img.imgur.com/' + src + "s.jpg") : ('http://img.imgur.com/' + src + ".jpg");
     } else {
         img.src = "x.png";
     }
