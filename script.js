@@ -101,9 +101,9 @@ var testArray = ["http://imgur.com/XXnxbqA", "http://imgur.com/UcaBqeL",
 
 
 $(function(){
-    $('#left').attr('src', 'https://' + imageObjArr[0].id + 's.jpg');
-    $('#middle').attr('src', 'https://' + imageObjArr[0].id + 's.jpg');
-    $('#right').attr('src', 'https://' + imageObjArr[0].id + 's.jpg');
+    $('#left').attr('src', 'https://img.imgur.com/' + imageObjArr[0].id + 's.jpg');
+    $('#middle').attr('src', 'https://img.imgur.com/' + imageObjArr[0].id + 's.jpg');
+    $('#right').attr('src', 'https://img.imgur.com/' + imageObjArr[0].id + 's.jpg');
 });
 
 var index = 1;
@@ -135,10 +135,10 @@ $('body').keydown( function(e) {
         //right
         ++index;
     }
-        setImage(main, 'https://' + imageObjArr[index].id + 's.jpg', false);
-        setImage(left, 'https://' + imageObjArr[index - 1].id + 's.jpg', true);
-        setImage(middle, 'https://' + imageObjArr[index].id + 's.jpg', true);
-        setImage(right, 'https://' + imageObjArr[index + 1].id + 's.jpg', true);
+        setImage(main, 'https://img.imgur.com/' + imageObjArr[index].id + 's.jpg', false);
+        setImage(left, 'https://img.imgur.com/' + imageObjArr[index - 1].id + 's.jpg', true);
+        setImage(middle, 'https://img.imgur.com/' + imageObjArr[index].id + 's.jpg', true);
+        setImage(right, 'https://img.imgur.com/' + imageObjArr[index + 1].id + 's.jpg', true);
 });
 
 function setImage(img, src, thumb){
