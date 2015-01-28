@@ -142,7 +142,7 @@ $('body').keydown( function(e) {
 });
 
 function setImage(img, src, thumb){
-    if(!src){
+    if(src){
         img.src = thumb ? ('http://img.imgur.com/' + src + "s.jpg") : ('http://img.imgur.com/' + src + ".jpg");
     } else {
         img.src = "x.png";
