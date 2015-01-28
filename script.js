@@ -39,15 +39,17 @@ var xhr = new XMLHttpRequest();
         parseAlbum(albumObj);
     }, false);
 
+function setHeader(xhrObj){ //sets request header
+    xhrObj.setRequestHeader('Authorization', 'Bearer ' + getParam('access_token'));
+}
+
 function getAlbum(id){
     xhr.open('GET', 'https://api.imgur.com/3/album/' + id + '/images');
     setHeader(xhr);
     xhr.send();
 }
 
-function setHeader(xhrObj){ //sets request header
-    xhrObj.setRequestHeader('Authorization', 'Bearer ' + getParam('access_token'));
-}
+
 
 
 //driver
