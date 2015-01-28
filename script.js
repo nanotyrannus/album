@@ -102,8 +102,8 @@ var testArray = ["http://imgur.com/XXnxbqA", "http://imgur.com/UcaBqeL",
 
 $(function(){
     $('#left').attr('src', 'https://img.imgur.com/' + imageObjArr[0].id + 's.jpg');
-    $('#middle').attr('src', 'https://img.imgur.com/' + imageObjArr[0].id + 's.jpg');
-    $('#right').attr('src', 'https://img.imgur.com/' + imageObjArr[0].id + 's.jpg');
+    $('#middle').attr('src', 'https://img.imgur.com/' + imageObjArr[1].id + 's.jpg');
+    $('#right').attr('src', 'https://img.imgur.com/' + imageObjArr[2].id + 's.jpg');
 });
 
 var index = 1;
@@ -142,7 +142,7 @@ $('body').keydown( function(e) {
 });
 
 function setImage(img, src, thumb){
-    if(src.contains('undefined')){
+    if(!src.contains('undefined')){
         img.src = thumb ? (src + "s.jpg") : (src + ".jpg");
     } else {
         img.src = "x.png";
