@@ -67,8 +67,8 @@ function getAlbum(id){
 
 //driver
 getAlbum('1ooOe');
-albumObjArr.push(JSON.parse(xhr.responseText));
-imageObjArr.push.apply(imageObjArr, albumObjArr.peek());
+//albumObjArr.push(JSON.parse(xhr.responseText));
+//imageObjArr.push.apply(imageObjArr, albumObjArr.peek());
 
 
 
