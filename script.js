@@ -135,15 +135,15 @@ $('body').keydown( function(e) {
         //right
         ++index;
     }
-        setImage(main, imageObjArr[index].id, false);
-        setImage(left, imageObjArr[index - 1].id, true);
-        setImage(middle, imageObjArr[index].id, true);
-        setImage(right, imageObjArr[index + 1].id, true);
+        setImage(main, imageObjArr[index], false);
+        setImage(left, imageObjArr[index - 1], true);
+        setImage(middle, imageObjArr[index], true);
+        setImage(right, imageObjArr[index + 1], true);
 });
 
 function setImage(img, src, thumb){
     if(src){
-        img.src = thumb ? ('http://img.imgur.com/' + src + "s.jpg") : ('http://img.imgur.com/' + src + ".jpg");
+        img.src = thumb ? ('http://img.imgur.com/' + src.id + "s.jpg") : ('http://img.imgur.com/' + src.id + ".jpg");
     } else {
         img.src = "x.png";
     }
